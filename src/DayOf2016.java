@@ -9,16 +9,15 @@ public class DayOf2016 {
 
     public String getDayName(int month, int day)
     {
-
+        int year = 2016;
+        Calendar calendar = Calendar.getInstance();
         int sum = 0;
-        for (int i=0; i<month-1; i++) {
-            Calendar calendar = Calendar.getInstance();
-            int year = 2016;
+
+        for (int i=0; i<month-1; i++) { //1월이 0이기 때문에
             calendar.set(year, i, 1);
             int dayOfMonth = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
             sum += dayOfMonth;
         }
-
         sum += day;
 
         int mod = sum % 7;
@@ -43,7 +42,8 @@ public class DayOf2016 {
     public static void main(String[] args)
     {
         DayOf2016 test = new DayOf2016();
-        int a=5, b=24;
-        System.out.println(test.getDayName(a,b));
+        System.out.println(test.getDayName(5,24));
+        System.out.println(test.getDayName(5,26));
+        System.out.println(test.getDayName(12,25));
     }
 }
