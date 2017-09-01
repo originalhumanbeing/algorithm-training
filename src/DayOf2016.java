@@ -1,7 +1,9 @@
 import java.util.Calendar;
 
 /**
- * Created by Hyunjung on 2017. 9. 2..
+ * https://programmers.co.kr/learn/challenge_codes/176
+ * 2016년 1월 1일의 요일이 금요일임을 알고
+ * 2016년의 특정 날짜의 요일을 찾는 프로그램
  */
 public class DayOf2016 {
 
