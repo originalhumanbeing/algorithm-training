@@ -39,7 +39,6 @@ function splitDartResult(dartResult) {
             prevIndex = i+1;
             return el;
         }
-
     }).filter(i => i);
 }
 

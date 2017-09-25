@@ -19,6 +19,7 @@ public class DayOf2016 {
             sum += dayOfMonth;
         }
         sum += day;
+        Math.pow(100, 2);
 
         int mod = sum % 7;
 
