@@ -36,29 +36,27 @@ public class PreTest2 {
     }
 
     public static String addSecretKey(String text, String secretKey) {
-        String reversedText = new StringBuilder(text).reverse().toString();
-        String reversedSecretKey = new StringBuilder(secretKey).reverse().toString();
         StringBuilder newText = new StringBuilder();
 
-        for(int i=0, sklen = reversedSecretKey.length(), len = reversedText.length(); i<len; i++) {
-            char ch = reversedText.charAt(i);
+        for(int i=0, sklen = secretKey.length(), len = text.length(); i<len; i++) {
+            char ch = text.charAt(i);
             int skIndex = i >= sklen ? i - sklen : i;
-            char skCh = reversedSecretKey.charAt(skIndex);
+            char skCh = secretKey.charAt(skIndex);
 
             int result = ch + (skCh - 'a');
             if (result > 'z')
                 result = result - 26;
 
-
             newText.append((char) result);
         }
 
-        return newText.reverse().toString();
+        return newText.toString();
     }
 
     public static String rotate(String text, int count) {
 
         for(int i=0; i<count; i++) {
+
             String sub = text.substring(1);
             sub += text.charAt(0);
             text = sub;
@@ -77,14 +75,13 @@ public class PreTest2 {
     }
 
     public static String minusSecretKey(String text, String secretKey) {
-        String reversedText = new StringBuilder(text).reverse().toString();
-        String reversedSecretKey = new StringBuilder(secretKey).reverse().toString();
+
         StringBuilder newText = new StringBuilder();
 
-        for(int i=0, sklen = reversedSecretKey.length(), len = reversedText.length(); i<len; i++) {
-            char ch = reversedText.charAt(i);
+        for(int i=0, sklen = secretKey.length(), len = text.length(); i<len; i++) {
+            char ch = text.charAt(i);
             int skIndex = i >= sklen ? i - sklen : i;
-            char skCh = reversedSecretKey.charAt(skIndex);
+            char skCh = secretKey.charAt(skIndex);
 
             int result = ch - (skCh - 'a');
             if (result < 'a')
@@ -94,8 +91,6 @@ public class PreTest2 {
             newText.append((char) result);
         }
 
-        return newText.reverse().toString();
+        return newText.toString();
     }
-
-
 }

@@ -1,6 +1,7 @@
 package goorm;
 
 import java.util.*;
+import java.util.function.Consumer;
 
 public class PreTest1 {
 
@@ -19,7 +20,6 @@ public class PreTest1 {
         for(String item : list) {
             System.out.println(item);
         }
-
     }
 
     private static List<String> getRemovedItems(String items)
@@ -27,21 +27,22 @@ public class PreTest1 {
         List<String> itemQueue = new ArrayList<>();
         List<String> removedItems = new ArrayList<>();
 
-        Arrays.stream(items.split(" "))
-                .forEach(item -> {
-                    if (itemQueue.size() < 3) {
-                        itemQueue.add(item);
-                    } else {
-                        if (itemQueue.contains(item)) {
-                            itemQueue.remove(item);
-                            itemQueue.add(item);
-                        } else {
-                            removedItems.add(itemQueue.get(0));
-                            itemQueue.remove(0);
-                            itemQueue.add(item);
-                        }
-                    }
-                });
+        String[] arr = items.split(" ");
+        for (String item : arr) {
+
+            if (itemQueue.size() < 3) {
+                itemQueue.add(item);
+            } else {
+                if (itemQueue.contains(item)) {
+                    itemQueue.remove(item);
+                    itemQueue.add(item);
+                } else {
+                    removedItems.add(itemQueue.get(0));
+                    itemQueue.remove(0);
+                    itemQueue.add(item);
+                }
+            }
+        }
 
         return removedItems;
     }
