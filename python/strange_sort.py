@@ -4,10 +4,10 @@
 # 정렬해야 하므로 결과는 [car, bed, sun]이 됩니다.
 # strange_sort함수를 완성해 보세요.
 
+
 def strange_sort(strings, n):
-    for v in strings:
-        print(v[n])
-    return sorted(strings, key=lambda strings:strings[n])
+    return sorted(strings, key=lambda x: x[n])
+
 
 # 아래는 테스트로 출력해 보기 위한 코드입니다.
 print(strange_sort(["sun", "bed", "car"], 1))
