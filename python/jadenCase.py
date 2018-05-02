@@ -8,11 +8,9 @@ def Jaden_Case(s):
     splited = s.split()
     answer = ''
     for word in splited:
-        for idx in range(len(word)):
+        for idx in range(0, len(word)):
             result = ''
-            if type(word[idx]) == str:
-                result += (word[idx].upper() + word[idx+1:].lower())
-                break
+            result += (word[0].upper() + word[1:].lower())
         answer += ' ' + result
     return answer.strip()
 
