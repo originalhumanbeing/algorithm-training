@@ -13,13 +13,25 @@
 // 3	5	12
 // 3	3	3
 
+// function solution(a, b) {
+//     let answer = 0;
+//     if (a > b) {
+//         let c = 0;
+//         c = b;
+//         b = a;
+//         a = c;
+//     }
+//
+//     for(let i=a; i<=b; i++) {
+//         answer += i;
+//     }
+//     return answer;
+// }
+
 function solution(a, b) {
     let answer = 0;
     if (a > b) {
-        let c = 0;
-        c = b;
-        b = a;
-        a = c;
+        [a, b] = [b, a];
     }
 
     for(let i=a; i<=b; i++) {
@@ -27,3 +39,6 @@ function solution(a, b) {
     }
     return answer;
 }
+
+var a = 3, b = 5;
+console.log(solution(a, b));
