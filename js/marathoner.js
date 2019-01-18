@@ -39,3 +39,29 @@ function solution(participant, completion) {
 
     console.log(temp);
 }
+
+// 동명이인을 못 걸러내는 문제
+// function whoIsNonFinish(participant, completion) {
+//     let nonFinish = '';
+//     participant.forEach(el => {
+//         if(completion.indexOf(el) === -1) {
+//             nonFinish = el;
+//         }
+//     });
+//
+//     return nonFinish;
+// }
+
+function whoIsNonFinish(p, c) {
+    let nonFinish = c.reduce((acc, p) => {
+        if (acc.indexOf(p) !== -1) {
+            var idx = acc.indexOf(p);
+            acc.splice(idx, 1);
+        }
+        return acc;
+    }, p);
+
+    return nonFinish;
+}
+
+module.exports = { whoIsNonFinish };

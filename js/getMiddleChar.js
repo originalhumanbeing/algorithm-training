@@ -21,3 +21,12 @@ function solution2(s) {
     return s.substr(Math.ceil(s.length / 2) - 1, s.length % 2 == 0 ? 2 : 1)
 }
 
+// 최근 풀이
+function getMiddleChar(str) {
+    let middle = '';
+    let startIdx = Math.floor((str.length - 1) / 2);
+    str.length % 2 === 0? middle = str.substr(startIdx, 2) : middle = str.substr(startIdx, 1);
+
+    return middle;
+}
+

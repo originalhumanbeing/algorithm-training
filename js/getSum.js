@@ -42,3 +42,18 @@ function solution(a, b) {
 
 var a = 3, b = 5;
 console.log(solution(a, b));
+
+
+// 최근 풀이
+function getSum(a, b) {
+    let sum = 0;
+    if (a === b) return a;
+    if (a > b) {
+        [a, b] = [b, a];
+    }
+
+    for (var i = a; i <= b; i++) {
+        sum += i;
+    }
+    return sum;
+}
